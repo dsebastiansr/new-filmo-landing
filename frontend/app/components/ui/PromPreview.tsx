@@ -11,7 +11,7 @@ export default function SchoolPreview({
   promId: number;
   schoolId: string;
 }) {
-  console.log(promId)
+  console.log(schoolId)
   return (
     <div className="flex w-full flex-col items-center gap-4 max-md:gap-4">
       <Image
@@ -26,7 +26,7 @@ export default function SchoolPreview({
         height={500}
       />
       <h1 className="font-garamond text-filmo-white text-4xl font-extrabold">
-        Promoción {toRoman(promId, schoolId)}
+        Promoción {toRoman(Number(promId), schoolId)}
       </h1>
       <UnderlinedButton
         linkTo={`/portafolio/${schoolId}/${promId}`}
