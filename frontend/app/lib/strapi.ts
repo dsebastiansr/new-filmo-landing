@@ -1,4 +1,5 @@
-export const STRAPI_BASE_URL = process.env.STRAPI_BASE_URL || 'http://192.168.100.125:1337';
+export const STRAPI_BASE_URL =
+  process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
 
 export async function getStrapiData(url: string) {
   try {
