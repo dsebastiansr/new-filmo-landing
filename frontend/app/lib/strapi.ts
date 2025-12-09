@@ -13,7 +13,7 @@ export async function getStrapiData(url: string) {
   }
 }
 
-export function toRoman(num: string, id: string) {
+export function toRoman(num, id) {
 
   if (id === 'interamerican') return num;
 
