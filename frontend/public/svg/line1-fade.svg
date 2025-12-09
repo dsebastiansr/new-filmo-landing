@@ -1,0 +1,17 @@
+<svg width="1926" height="1692" viewBox="0 0 1926 1692" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1920" height="1690" transform="translate(6 1)" fill="white" fill-opacity="0.01"/>
+<path d="M2 18C2 18 1220.5 120 1220.5 625.5C1220.5 1057.36 392.236 757.786 288.5 1177C203.5 1520.5 525.5 1675.5 525.5 1675.5" stroke="#FDC700" stroke-width="36"/>
+<rect width="377" height="189" transform="matrix(-1 0 0 1 589 1326)" fill="url(#paint0_linear_462_25)"/>
+<circle cx="1038.5" cy="636" r="512.5" fill="url(#paint1_radial_462_25)"/>
+<defs>
+<linearGradient id="paint0_linear_462_25" x1="188.5" y1="0" x2="188.5" y2="189" gradientUnits="userSpaceOnUse">
+<stop stop-color="#141110" stop-opacity="0"/>
+<stop offset="1" stop-color="#141110"/>
+</linearGradient>
+<radialGradient id="paint1_radial_462_25" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1038.5 636) rotate(90) scale(512.5)">
+<stop stop-color="#141110"/>
+<stop offset="0.5" stop-color="#141110" stop-opacity="0.8"/>
+<stop offset="1" stop-color="#141110" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

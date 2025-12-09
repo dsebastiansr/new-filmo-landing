@@ -1,0 +1,15 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
+export default function ContactUsButton() {
+  return (
+    <Link
+      target="_blank"
+      href=""
+      className="flex justify-end gap-2 bg-filmo-yellow-100 font-figtree text-filmo-black-100 rounded-full px-5 py-3 font-bold uppercase max-md:px-3 max-md:py-2 max-md:text-sm"
+    >
+      <Image src="/svg/ws.svg" className="h-6 w-6" alt="" width={0} height={0} />
+      Contactanos
+    </Link>
+  );
+}
