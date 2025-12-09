@@ -281,10 +281,12 @@ export default async function Home() {
                   selectedSchools.push(schools[idx]);
                   schools.splice(idx, 1);
                 }
+
                 return selectedSchools.map((school: any) => (
+                   
                   <LastWork
                     key={school.id}
-                    image={`${STRAPI_BASE_URL}${school.proms[0].promCover}`}
+                    image={`${school.proms[0].promCover}`}
                     prom={school.proms[0].id}
                     school={school.name}
                     link={`/portafolio/${school.id}/${school.proms[0].id}`}

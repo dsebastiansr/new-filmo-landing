@@ -33,7 +33,7 @@ export async function PromCollage({ params }: { params: { schoolId: string; prom
                   .map((fileObj: any) => (
                     <Image
                       key={fileObj.id}
-                      src={`${STRAPI_BASE_URL}${fileObj.url}`}
+                      src={`${fileObj.url}`}
                       alt={fileObj.url}
                       width={1200}
                       height={800}

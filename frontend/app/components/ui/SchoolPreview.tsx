@@ -68,7 +68,7 @@ export default function SchoolPreview({
   }, []);
 
   return (
-    <div className="group w-full flex flex-col items-center justify-end gap-8 transition-all">
+    <div className="group w-full flex flex-col items-center justify-end gap-2 transition-all">
       <h1 className="font-garamond text-center text-4xl w-[30ch] max-md:w-auto font-extrabold text-white">
         {schoolName}
       </h1>

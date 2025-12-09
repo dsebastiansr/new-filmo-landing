@@ -111,8 +111,8 @@ export default async function Portafolio() {
                 <SchoolPreview
                   schoolName={school.name}
                   schoolId={school.id}
-                  schoolLogo={`${STRAPI_BASE_URL}${school.logo}`}
-                  videoURL={`${STRAPI_BASE_URL}${school.previewVideo}`}
+                  schoolLogo={`${school.logo}`}
+                  videoURL={`${school.previewVideo}`}
                 />
               </div>
             ))}
