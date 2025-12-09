@@ -12,7 +12,7 @@
   "pluginOptions": {},
   "attributes": {
     "promId": {
-      "type": "string"
+      "type": "integer"
     },
     "promText": {
       "type": "string"

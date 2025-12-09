@@ -8,9 +8,10 @@ export default function SchoolPreview({
   schoolId,
 }: {
   previewImage: string;
-  promId: string;
+  promId: number;
   schoolId: string;
 }) {
+  console.log(promId)
   return (
     <div className="flex w-full flex-col items-center gap-4 max-md:gap-4">
       <Image

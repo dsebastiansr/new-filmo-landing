@@ -444,6 +444,7 @@ export interface ApiPromProm extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    holaholaholah: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::prom.prom'> &
       Schema.Attribute.Private;
@@ -451,7 +452,7 @@ export interface ApiPromProm extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios'
     > &
       Schema.Attribute.Required;
-    promId: Schema.Attribute.String;
+    promId: Schema.Attribute.Integer;
     promPics: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.Required;
     promSubText: Schema.Attribute.String;
