@@ -275,7 +275,7 @@ export default async function Home() {
             {
               (() => {
                 const schools = [...data];
-                const selectedSchools = [];
+                const selectedSchools: any[] = [];
                 while (selectedSchools.length < 3 && schools.length) {
                   const idx = Math.floor(Math.random() * schools.length);
                   selectedSchools.push(schools[idx]);
