@@ -48,13 +48,13 @@ export default async function promPage({ params }: { params: Promise<{ schoolId:
               </Link>
               <span>|</span>
               <p className="text-filmo-yellow-100 font-bold max-md:text-sm">
-                Promocion {toRoman(promId, schoolId)}
+                Promocion {toRoman(Number(promId), schoolId)}
               </p>
             </div>
 
             <div className="flex flex-col items-center gap-5">
               <h1 className="font-garamond text-8xl font-extrabold text-white max-md:text-6xl">
-                Promoción {toRoman(promId, schoolId)}
+                Promoción {toRoman(Number(promId), schoolId)}
               </h1>
 
               <div className="font-figtree text-filmo-soft-white w-[26ch] text-2xl max-md:w-auto max-md:text-xl">
@@ -71,7 +71,7 @@ export default async function promPage({ params }: { params: Promise<{ schoolId:
           width={500}
           height={300}
           src={`${STRAPI_BASE_URL}${prom.cover}`}
-          alt={`Imagen para ${toRoman(promId, schoolId)}`}
+          alt={`Imagen para ${toRoman(Number(promId), schoolId)}`}
         />
       </div>
 
