@@ -25,7 +25,6 @@ export default async function Home() {
     })),
   }));
 
-
   return (
     <div className="bg-filmo-black-100 flex flex-col overflow-x-hidden">
       <div className="relative flex h-screen w-full flex-col items-center max-md:px-6">

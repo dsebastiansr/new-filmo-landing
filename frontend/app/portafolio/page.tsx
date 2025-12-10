@@ -11,7 +11,7 @@ import { getStrapiData, STRAPI_BASE_URL } from '../lib/strapi';
 
 export default async function Portafolio() {
   const strapiData = await getStrapiData(
-    '/api/schools?populate[schoolLogo]=true&populate[schoolCover]=true'
+    '/api/schools?populate[schoolLogo]=true&populate[schoolCover]=true&populate[priority]=true'
   );
 
   const data = strapiData.map((school: any) => ({
@@ -19,7 +19,10 @@ export default async function Portafolio() {
     name: school.school,
     previewVideo: school.schoolCover.url,
     logo: school.schoolLogo.url,
+    priority: school.priority
   }));
+
+  console.log(data)
 
   return (
     <div className="bg-filmo-black-100 flex flex-col">
@@ -103,23 +106,32 @@ export default async function Portafolio() {
             className="flex w-full flex-wrap justify-center gap-20 max-xl:flex-col max-md:gap-12"
             id="works"
           >
-            {data.map((school: { id: string; name: string; schoolId: string; previewVideo: string; logo: string }) => (
-              <div
-                className={`mb-12 flex w-5/12 max-xl:w-full`}
-                key={school.id}
-              >
-                <SchoolPreview
-                  schoolName={school.name}
-                  schoolId={school.id}
-                  schoolLogo={`${STRAPI_BASE_URL}${school.logo}`}
-                  videoURL={`${STRAPI_BASE_URL}${school.previewVideo}`}
-                />
-              </div>
-            ))}
+            {data
+              .slice()
+              .sort((a, b) => (a.priority) - (b.priority))
+              .map((school: {
+                id: string;
+                name: string;
+                schoolId: string;
+                previewVideo: string;
+                logo: string;
+                priority: number;
+              }) => (
+                <div
+                  className="mb-12 flex w-5/12 max-xl:w-full"
+                  key={school.id}
+                >
+                  <SchoolPreview
+                    schoolName={school.name}
+                    schoolId={school.id}
+                    schoolLogo={`${school.logo}`}
+                    videoURL={`${school.previewVideo}`}
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </div>
-
       <CTA />
       <Instagram />
       <Footer />

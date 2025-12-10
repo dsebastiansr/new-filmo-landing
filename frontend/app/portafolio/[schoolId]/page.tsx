@@ -68,7 +68,7 @@ export default async function SchoolPage({
 
             <div className="flex flex-col items-center gap-5">
               <Image
-                src={`${STRAPI_BASE_URL}${school.logo}`}
+                src={`${school.logo}`}
                 className="h-24 object-contain"
                 alt=""
                 width={400}
@@ -91,7 +91,7 @@ export default async function SchoolPage({
           loop
         >
           <source
-            src={`${STRAPI_BASE_URL}${school.previewVideo}`}
+            src={`${school.previewVideo}`}
             type="video/mp4"
           />
         </video>
@@ -107,7 +107,7 @@ export default async function SchoolPage({
               >
                 <PromPreview
                   promId={prom.id}
-                  previewImage={`${STRAPI_BASE_URL}${prom.cover}`}
+                  previewImage={`${prom.cover}`}
                   schoolId={school.id}
                 />
               </div>
