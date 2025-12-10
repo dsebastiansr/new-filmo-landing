@@ -11,7 +11,6 @@ export default function SchoolPreview({
   promId: number;
   schoolId: string;
 }) {
-  console.log(schoolId)
   return (
     <div className="flex w-full flex-col items-center gap-4 max-md:gap-4">
       <Image

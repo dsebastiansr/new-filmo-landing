@@ -70,7 +70,7 @@ export default async function promPage({ params }: { params: Promise<{ schoolId:
           className="fixed z-0 h-full w-full object-cover opacity-15"
           width={500}
           height={300}
-          src={`${prom.cover}`}
+          src={`${STRAPI_BASE_URL}${prom.cover}`}
           alt={`Imagen para ${toRoman(Number(promId), schoolId)}`}
         />
       </div>

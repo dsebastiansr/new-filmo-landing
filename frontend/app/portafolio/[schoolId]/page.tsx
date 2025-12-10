@@ -17,22 +17,33 @@ export default async function SchoolPage({
 }) {
   const { schoolId } = await params;
 
+    // const strapiSchool = await getStrapiData(
+    // `/api/schools?filters[schoolId][$eq]=${schoolId}
+    // &populate[schoolLogo]=true
+    // &populate[schoolCover]=true
+    // &populate[proms][populate][promCover]=true
+    // &populate[proms][sort]=promId:desc`
+    // );
+
   const strapiSchool = await getStrapiData(
-    `/api/schools?filters[schoolId][$eq]=${schoolId}&populate[schoolLogo]=true&populate[schoolCover]=true&populate[proms][populate][promCover]=true`
+    `/api/schools?filters[schoolId][$eq]=${schoolId}&populate[schoolLogo]=true&populate[schoolCover]=true&populate[proms][fields][0]=promId&populate[proms][populate][promCover]=true&populate[proms][sort][0]=promId:desc`
   );
 
   const schoolRaw = strapiSchool[0];
-
+  
   const school = {
     id: schoolRaw.schoolId,
     name: schoolRaw.school,
     previewVideo: schoolRaw.schoolCover?.url ?? null,
     logo: schoolRaw.schoolLogo?.url ?? null,
     proms:
-      schoolRaw.proms?.map((prom: any) => ({
-        id: prom.promId,
-        cover: prom.promCover?.url ?? null,
-      })) ?? [],
+      (schoolRaw.proms ?? [])
+        .slice()
+        .sort((a: any, b: any) => (b.promId ?? 0) - (a.promId ?? 0))
+        .map((prom: any) => ({
+          id: prom.promId,
+          cover: prom.promCover?.url ?? null,
+        })),
   };
 
   return (
@@ -57,7 +68,7 @@ export default async function SchoolPage({
 
             <div className="flex flex-col items-center gap-5">
               <Image
-                src={`${school.logo}`}
+                src={`${STRAPI_BASE_URL}${school.logo}`}
                 className="h-24 object-contain"
                 alt=""
                 width={400}
@@ -80,7 +91,7 @@ export default async function SchoolPage({
           loop
         >
           <source
-            src={`${school.previewVideo}`}
+            src={`${STRAPI_BASE_URL}${school.previewVideo}`}
             type="video/mp4"
           />
         </video>
@@ -96,7 +107,7 @@ export default async function SchoolPage({
               >
                 <PromPreview
                   promId={prom.id}
-                  previewImage={`${prom.cover}`}
+                  previewImage={`${STRAPI_BASE_URL}${prom.cover}`}
                   schoolId={school.id}
                 />
               </div>

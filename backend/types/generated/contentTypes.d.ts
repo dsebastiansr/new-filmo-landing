@@ -447,6 +447,7 @@ export interface ApiPromProm extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::prom.prom'> &
       Schema.Attribute.Private;
+    priority: Schema.Attribute.Integer;
     promCover: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     > &
