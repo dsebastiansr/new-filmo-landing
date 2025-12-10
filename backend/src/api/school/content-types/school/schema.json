@@ -11,6 +11,9 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "priority": {
+      "type": "integer"
+    },
     "school": {
       "type": "string"
     },

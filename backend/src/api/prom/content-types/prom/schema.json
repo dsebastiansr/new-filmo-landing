@@ -11,9 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "priority": {
-      "type": "integer"
-    },
     "promId": {
       "type": "integer"
     },
