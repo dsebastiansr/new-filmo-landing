@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Metadata } from 'next';
 
 import Navbar from '../../components/layouts/Navbar';
 import Footer from '../../components/layouts/Footer';
@@ -6,7 +7,7 @@ import CTA from '../../components/sections/CTA';
 import Instagram from '../../components/sections/Instagram';
 import Link from 'next/link';
 
-import { getStrapiData, STRAPI_BASE_URL } from '@/app/lib/strapi';
+import { getStrapiData } from '@/app/lib/strapi';
 
 import PromPreview from '../../components/ui/PromPreview';
 
@@ -15,15 +16,8 @@ export default async function SchoolPage({
 }: {
   params: Promise<{ schoolId: string }>;
 }) {
-  const { schoolId } = await params;
 
-    // const strapiSchool = await getStrapiData(
-    // `/api/schools?filters[schoolId][$eq]=${schoolId}
-    // &populate[schoolLogo]=true
-    // &populate[schoolCover]=true
-    // &populate[proms][populate][promCover]=true
-    // &populate[proms][sort]=promId:desc`
-    // );
+  const { schoolId } = await params;
 
   const strapiSchool = await getStrapiData(
     `/api/schools?filters[schoolId][$eq]=${schoolId}&populate[schoolLogo]=true&populate[schoolCover]=true&populate[proms][fields][0]=promId&populate[proms][populate][promCover]=true&populate[proms][sort][0]=promId:desc`

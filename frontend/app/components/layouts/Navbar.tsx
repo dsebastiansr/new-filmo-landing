@@ -26,7 +26,7 @@ export default function Navbar() {
           'from-[#0C0A09]/100',
           'to-white/0'
         );
-        navbar.classList.add('py-4');
+        navbar.classList.add('py-6');
 
         if (logo) {
           logo.classList.remove('h-20');
@@ -38,7 +38,7 @@ export default function Navbar() {
           'bg-opacity-90',
           'drop-shadow-2xl'
         );
-        navbar.classList.remove('py-4');
+        navbar.classList.remove('py-6');
         navbar.classList.add(
           'py-12',
           'bg-gradient-to-b',
@@ -92,13 +92,13 @@ export default function Navbar() {
 
       <div className="h-full hidden max-md:flex items-center gap-4">
         <Link href="/">
-          <Image src="/svg/house.svg" className="h-8" alt="" width={24} height={24} />
+          <Image src="/svg/house.svg" className="" alt="" width={36} height={24} />
         </Link>
         <Link href="/portafolio">
-          <Image src="/svg/camera.svg" className="h-8" alt="" width={24} height={24} />
+          <Image src="/svg/camera.svg" className="" alt="" width={36} height={24} />
         </Link>
         <Link href="">
-          <Image src="/svg/ws1.svg" className="h-8" alt="" width={24} height={24} />
+          <Image src="/svg/ws1.svg" className="" alt="" width={36} height={24} />
         </Link>
       </div>
     </nav>

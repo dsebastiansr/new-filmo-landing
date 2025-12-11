@@ -12,10 +12,11 @@
   "pluginOptions": {},
   "attributes": {
     "promId": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "promText": {
-      "type": "string"
+      "type": "text"
     },
     "promSubText": {
       "type": "string"
@@ -26,9 +27,7 @@
       "required": true,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "promPics": {

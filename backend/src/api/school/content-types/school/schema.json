@@ -12,32 +12,33 @@
   "pluginOptions": {},
   "attributes": {
     "priority": {
-      "type": "integer"
+      "type": "integer",
+      "required": false
     },
     "school": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "schoolId": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "schoolCover": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
-        "images",
         "files",
-        "videos",
-        "audios"
+        "videos"
       ]
     },
     "schoolLogo": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
-        "images",
         "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "proms": {

@@ -31,21 +31,21 @@ export default async function Home() {
         <Navbar />
 
         <div className="absolute bottom-25 z-10 flex flex-col items-center gap-5 text-center max-md:static max-md:bottom-full max-md:h-dvh max-md:justify-center max-md:gap-14">
-          <div className="font-garamond text-8xl font-extrabold text-white max-md:flex max-md:w-full max-md:flex-col max-md:items-center max-md:justify-center max-md:text-center max-md:text-4xl">
+          <div className="font-garamond text-8xl font-extrabold text-white max-md:flex max-md:w-full max-md:flex-col max-md:items-center max-md:justify-center max-md:text-center max-md:text-5xl max-md:mt-16">
             <h1>Especialistas en</h1>
             <h1 className="flex items-center justify-end gap-4 max-md:flex-col max-md:gap-0">
               capturar historias
               <UnderlinedText
                 text="unicas"
                 full={true}
-                textSize="4xl"
+                textSize="5xl"
                 styles="after:-bottom-1"
               />
             </h1>
           </div>
 
-          <div className="font-figtree text-filmo-soft-white text-2xl max-md:text-xl">
-            <p>Cada sonrisa, abrazo y logro merece ser eterno.</p>
+          <div className="font-figtree text-filmo-soft-white text-2xl max-md:text-xl max-md:hidden">
+            <p className='max-md:mb-2'>Cada sonrisa, abrazo y logro merece ser eterno.</p>
             <p>Déjanos contar tu historia en imágenes.</p>
           </div>
 
@@ -76,11 +76,11 @@ export default async function Home() {
             Hemos trabajado con
           </h1>
           <div className="flex flex-wrap items-center justify-center gap-16 grayscale max-md:flex-col">
-            <Image className="h-10 w-auto" src="/img/americano.png" alt="" height={40} width={100} />
+            <Image className="h-16 w-auto brightness-200" src="/img/americano.png" alt="" height={40} width={100} />
             <Image className="h-10 w-auto" src="/img/copol.png" alt="" height={40} width={100} />
-            <Image className="h-10 w-auto" src="/img/montessori.png" alt="" height={40} width={100} />
+            <Image className="h-14 w-auto" src="/img/montessori.png" alt="" height={40} width={100} />
             <Image
-              className="h-10 w-auto max-md:h-16"
+              className="h-20 w-auto max-md:h-16 brightness-125"
               src="/img/interamerican.png"
               alt=""
               height={40} width={100}
@@ -296,7 +296,7 @@ export default async function Home() {
             }
           </div>
           <Link
-            className="bg-filmo-yellow-100 mt-16 max-md:mt-8 rounded-full px-7 py-4 max-md:px-6 max-md:py-3"
+            className="bg-filmo-yellow-100 mt-16 max-md:mt-24 rounded-full px-7 py-4 max-md:px-6 max-md:py-3"
             href="/portafolio"
           >
             <p className="font-figtree text-filmo-black-100 text-lg font-bold uppercase select-none">

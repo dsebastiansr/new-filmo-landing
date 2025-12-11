@@ -4,7 +4,7 @@ export default function UnderlinedButton({text, linkTo, styles }: {text: string;
   return (
     <Link
       href={linkTo}
-      className={`max-md:${styles} w-fit text-filmo-white font-figtree border-filmo-yellow-100 border-b-3 pb-1 text-lg font-bold uppercase`}
+      className={`max-md:${styles} w-fit text-filmo-white font-figtree border-filmo-yellow-100 border-b-3 text-lg font-bold uppercase`}
     >
       {text}
     </Link>

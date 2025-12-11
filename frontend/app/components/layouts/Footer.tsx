@@ -7,11 +7,9 @@ export default function Footer() {
       <Link href="/">
         <Image src="/svg/filmo.svg" className="w-28 max-md:w-20 pl-2" alt="" width={0} height={0} />
       </Link>
-      ;
       <p className="font-figtree text-filmo-soft-white w-[50ch] max-md:w-full max-md:text-sm text-center text-lg font-medium ">
-        Nos metemos en el ritmo, en la emoción, en el caos lindo que es cada
-        evento escolar. No dirigimos. No posamos. Solo estamos atentos para
-        capturar lo que de verdad importa.
+        Nos metemos en el ritmo, en la emoción y en el caos lindo que es cada
+        evento escolar. Estamos atentos para capturar lo que de verdad importa.
       </p>
       <p className="font-figtree text-filmo-gray max-md:text-sm text-center text-sm font-medium">
         Filmo © 2025. Todos los derechos reservados

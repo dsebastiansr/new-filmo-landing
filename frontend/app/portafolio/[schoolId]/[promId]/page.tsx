@@ -76,15 +76,15 @@ export default async function promPage({ params }: { params: Promise<{ schoolId:
       </div>
 
       <div className="bg-noise bg-filmo-black-100 z-10 flex flex-col gap-52 px-48 py-32 max-md:gap-16 max-md:px-6 max-md:py-12">
-        <div className="flex w-full justify-between gap-8 max-md:flex-col max-md:gap-4">
-          <div className="w-8/12 max-md:w-full">
+        <div className="flex w-full justify-between flex-col gap-8 max-md:gap-4">
+          <div className="w-9/12 max-md:w-full">
             <h1 className="font-garamond text-filmo-white text-7xl font-extrabold max-md:text-3xl">
               {prom.text}
             </h1>
           </div>
 
-          <div className="flex w-4/12 justify-end max-md:w-full">
-            <p className="font-figtree text-filmo-soft-white w-[30ch] text-right text-2xl max-md:w-full max-md:text-left max-md:text-xl">
+          <div className="flex w-12/12 max-md:w-full">
+            <p className="font-figtree text-filmo-soft-white text-left text-2xl max-md:w-full max-md:text-left max-md:text-xl">
               {prom.subText}
             </p>
           </div>

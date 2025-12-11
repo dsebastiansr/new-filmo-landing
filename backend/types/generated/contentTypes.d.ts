@@ -447,15 +447,13 @@ export interface ApiPromProm extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::prom.prom'> &
       Schema.Attribute.Private;
-    promCover: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    > &
+    promCover: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
-    promId: Schema.Attribute.Integer;
+    promId: Schema.Attribute.Integer & Schema.Attribute.Required;
     promPics: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.Required;
     promSubText: Schema.Attribute.String;
-    promText: Schema.Attribute.String;
+    promText: Schema.Attribute.Text;
     promVideoId: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     school: Schema.Attribute.Relation<'manyToOne', 'api::school.school'>;
@@ -488,14 +486,12 @@ export interface ApiSchoolSchool extends Struct.CollectionTypeSchema {
     priority: Schema.Attribute.Integer;
     proms: Schema.Attribute.Relation<'oneToMany', 'api::prom.prom'>;
     publishedAt: Schema.Attribute.DateTime;
-    school: Schema.Attribute.String;
-    schoolCover: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    schoolId: Schema.Attribute.String;
-    schoolLogo: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    school: Schema.Attribute.String & Schema.Attribute.Required;
+    schoolCover: Schema.Attribute.Media<'files' | 'videos'> &
+      Schema.Attribute.Required;
+    schoolId: Schema.Attribute.String & Schema.Attribute.Required;
+    schoolLogo: Schema.Attribute.Media<'files' | 'images'> &
+      Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

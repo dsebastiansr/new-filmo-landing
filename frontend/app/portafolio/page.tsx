@@ -7,7 +7,13 @@ import Polaroid from '../components/ui/Polaroid';
 import UnderlinedText from '../components/ui/UnderlinedText';
 import SchoolPreview from '../components/ui/SchoolPreview';
 
-import { getStrapiData, STRAPI_BASE_URL } from '../lib/strapi';
+import { getStrapiData } from '../lib/strapi';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "• Portafolio •",
+  description: "Filmo",
+};
 
 export default async function Portafolio() {
   const strapiData = await getStrapiData(
