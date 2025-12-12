@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import UnderlinedButton from '../ui/UnderlinedButton';
+
 import { toRoman } from '../../lib/strapi';
+import UnderlinedButton from '../ui/UnderlinedButton';
 
 export default function SchoolPreview({
   previewImage,

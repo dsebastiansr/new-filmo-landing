@@ -1,14 +1,13 @@
-import Image from 'next/image';
 import { Metadata } from 'next';
-
-import Navbar from '../../components/layouts/Navbar';
-import Footer from '../../components/layouts/Footer';
-import CTA from '../../components/sections/CTA';
-import Instagram from '../../components/sections/Instagram';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { getStrapiData } from '@/app/lib/strapi';
 
+import Footer from '../../components/layouts/Footer';
+import Navbar from '../../components/layouts/Navbar';
+import CTA from '../../components/sections/CTA';
+import Instagram from '../../components/sections/Instagram';
 import PromPreview from '../../components/ui/PromPreview';
 
 export default async function SchoolPage({

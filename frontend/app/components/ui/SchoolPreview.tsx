@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect } from 'react';
+
 import UnderlinedButton from './UnderlinedButton';
 
 export default function SchoolPreview({

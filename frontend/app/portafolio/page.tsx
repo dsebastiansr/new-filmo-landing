@@ -1,14 +1,14 @@
-import Navbar from '../components/layouts/Navbar';
+import { Metadata } from 'next';
+
 import Footer from '../components/layouts/Footer';
+import Navbar from '../components/layouts/Navbar';
 import CTA from '../components/sections/CTA';
 import Instagram from '../components/sections/Instagram';
-import UnderlinedButton from '../components/ui/UnderlinedButton';
 import Polaroid from '../components/ui/Polaroid';
-import UnderlinedText from '../components/ui/UnderlinedText';
 import SchoolPreview from '../components/ui/SchoolPreview';
-
+import UnderlinedButton from '../components/ui/UnderlinedButton';
+import UnderlinedText from '../components/ui/UnderlinedText';
 import { getStrapiData } from '../lib/strapi';
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "• Portafolio •",
@@ -27,8 +27,6 @@ export default async function Portafolio() {
     logo: school.schoolLogo.url,
     priority: school.priority
   }));
-
-  console.log(data)
 
   return (
     <div className="bg-filmo-black-100 flex flex-col">

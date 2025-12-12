@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+
 import IgButton from '../ui/IgButton';
 
 export default function Instagram() {

@@ -1,18 +1,10 @@
-import { getStrapiData, STRAPI_BASE_URL } from "../../lib/strapi";
-import Image from "next/image";
-import PromCollageClient from "./PromCollageClient"; 
+import Image from 'next/image';
 
-export async function PromCollage({ params }: { params: { schoolId: string; promId: string } }) {
-  const { schoolId, promId } = params;
+import PromCollageClient from './PromCollageClient';
 
-  const strapiProm = await getStrapiData(
-    `/api/proms?filters[promId][$eq]=${promId}` +
-    `&filters[school][schoolId][$eq]=${schoolId}` +
-    `&populate=promPics`
-  );
+export async function PromCollage(promPics: any) {
 
-  const promRaw = strapiProm[0];
-  const promPics = promRaw.promPics;
+  const pics = promPics.promPics 
 
   return (
     <div className="flex items-center flex-col gap-16 w-full h-auto transition-all">
@@ -22,13 +14,14 @@ export async function PromCollage({ params }: { params: { schoolId: string; prom
       >
         {/* Desktop: 3 columnas */}
         <div className="w-full flex">
-          <div className="flex w-full max-md:hidden gap-6">
-            {["left", "center", "right"].map((col, colIndex) => (
+
+          <div className="flex w-full max-md:hidden max-md:gap-2 gap-6">
+            {['left', 'center', 'right'].map((col, colIndex) => (
               <div
                 key={colIndex}
                 className="h-full flex flex-col gap-6 max-md:gap-2 w-4/12"
               >
-                {promPics
+                {pics
                   .filter((_: any, i: number) => i % 3 === colIndex)
                   .map((fileObj: any) => (
                     <Image
@@ -43,6 +36,29 @@ export async function PromCollage({ params }: { params: { schoolId: string; prom
               </div>
             ))}
           </div>
+
+          <div className="hidden w-full max-md:flex gap-6 max-md:gap-2">
+            {[0, 1].map((colIndex) => (
+              <div
+                key={colIndex}
+                className="h-full flex flex-col gap-6 max-md:gap-2 w-1/2"
+              >
+                {pics
+                  .filter((_: any, i: number) => i % 2 === colIndex)
+                  .map((fileObj: any) => (
+                    <Image
+                      key={fileObj.id}
+                      src={`${fileObj.url}`}
+                      alt={fileObj.url}
+                      width={1200}
+                      height={800}
+                      className="rounded-lg"
+                    />
+                  ))}
+              </div>
+            ))}
+          </div>
+
         </div>
 
         <div

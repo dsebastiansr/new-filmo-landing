@@ -1,5 +1,6 @@
-import UnderlinedButton from '../ui/UnderlinedButton';
 import Image from 'next/image';
+
+import UnderlinedButton from '../ui/UnderlinedButton';
 
 export default function LastWork({
   image,

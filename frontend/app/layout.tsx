@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import './styles/fonts.css'
-import './styles/global.css'
+import './styles/fonts.css';
+import './styles/global.css';
 
 export const metadata: Metadata = {
   title: "• Filmo •",

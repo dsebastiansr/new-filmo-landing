@@ -1,14 +1,14 @@
 import Image from 'next/image';
-import Navbar from './components/layouts/Navbar';
+import Link from 'next/link';
+
 import Footer from './components/layouts/Footer';
+import Navbar from './components/layouts/Navbar';
 import CTA from './components/sections/CTA';
 import Instagram from './components/sections/Instagram';
+import LastWork from './components/ui/LastWork';
 import UnderlinedButton from './components/ui/UnderlinedButton';
 import UnderlinedText from './components/ui/UnderlinedText';
-import Link from 'next/link';
-import LastWork from './components/ui/LastWork';
 import { getStrapiData } from './lib/strapi';
-import { STRAPI_BASE_URL } from './lib/strapi';
 
 export default async function Home() {
 

@@ -1,20 +1,25 @@
-import Navbar from '../../../components/layouts/Navbar';
-import Image from 'next/image';
-import CTA from '@/app/components/sections/CTA';
-import Instagram from '@/app/components/sections/Instagram';
-import Footer from '@/app/components/layouts/Footer';
-import { getStrapiData, STRAPI_BASE_URL, toRoman } from '../../../lib/strapi';
-import { PromCollage } from '../../../components/sections/PromCollage';
 import Link from 'next/link';
 
-export default async function promPage({ params }: { params: Promise<{ schoolId: string; promId: string }> }) {
+import Footer from '@/app/components/layouts/Footer';
+import CTA from '@/app/components/sections/CTA';
+import Instagram from '@/app/components/sections/Instagram';
 
+import Navbar from '../../../components/layouts/Navbar';
+import { PromCollage } from '../../../components/sections/PromCollage';
+import CoverCollage from '../../../components/ui/CoverCollage';
+import { getStrapiData, toRoman } from '../../../lib/strapi';
+
+export default async function promPage({
+  params,
+}: {
+  params: Promise<{ schoolId: string; promId: string }>;
+}) {
   const { schoolId, promId } = await params;
 
   const strapiProm = await getStrapiData(
     `/api/proms?filters[promId][$eq]=${promId}` +
-    `&filters[school][schoolId][$eq]=${schoolId}` +
-    `&populate=*`
+      `&filters[school][schoolId][$eq]=${schoolId}` +
+      `&populate=*`
   );
 
   const promRaw = strapiProm[0];
@@ -26,17 +31,21 @@ export default async function promPage({ params }: { params: Promise<{ schoolId:
     videoId: promRaw.promVideoId,
     text: promRaw.promText,
     subText: promRaw.promSubText,
+    promPics: promRaw.promPics,
   };
 
   return (
     <div className="bg-filmo-black-100 flex flex-col">
       <Navbar />
 
-      <div className="flex h-[800px] w-full overflow-hidden max-md:h-[550px]">
-        <div className="flex h-full w-full flex-col justify-center px-42 py-32 max-md:px-6 max-md:py-12">
+      <div className="flex h-[800px] w-full overflow-hidden max-md:h-[550px] box ">
+        <div className="flex h-full w-full flex-col justify-center px-42 py-32 max-md:px-6 max-md:py-12 ">
           <div className="z-10 flex flex-col items-center gap-32 text-center max-md:gap-20">
             <div className="font-figtree text-filmo-soft-white flex gap-2 text-xl font-medium max-md:items-center max-md:text-lg">
-              <Link className="underline underline-offset-3 transition-all duration-200 hover:text-filmo-yellow-100" href={`/portafolio`}>
+              <Link
+                className="underline underline-offset-3 transition-all duration-200 hover:text-filmo-yellow-100"
+                href={`/portafolio`}
+              >
                 Portafolio
               </Link>
               <span>|</span>
@@ -66,31 +75,25 @@ export default async function promPage({ params }: { params: Promise<{ schoolId:
           </div>
         </div>
 
-        <Image
-          className="fixed z-0 h-full w-full object-cover opacity-15"
-          width={500}
-          height={300}
-          src={`${prom.cover}`}
-          alt={`Imagen para ${toRoman(Number(promId), schoolId)}`}
-        />
+        <CoverCollage promPics={prom.promPics} />
       </div>
 
-      <div className="bg-noise bg-filmo-black-100 z-10 flex flex-col gap-52 px-48 py-32 max-md:gap-16 max-md:px-6 max-md:py-12">
-        <div className="flex w-full justify-between flex-col gap-8 max-md:gap-4">
-          <div className="w-9/12 max-md:w-full">
-            <h1 className="font-garamond text-filmo-white text-7xl font-extrabold max-md:text-3xl">
-              {prom.text}
+      <div className="bg-noise bg-filmo-black-100 z-10 flex flex-col gap-40 px-48 py-32 max-md:gap-16 max-md:px-6 max-md:py-12">
+        <div className="flex w-full justify-between flex-col gap-3 max-md:gap-4">
+          <div className="w-10/12 max-md:w-full">
+            <h1 className="font-garamond text-filmo-white text-4xl font-medium leading-11 max-md:text-2xl max-md:leading-7 ">
+              &quot; {prom.text} &quot;
             </h1>
           </div>
 
-          <div className="flex w-12/12 max-md:w-full">
-            <p className="font-figtree text-filmo-soft-white text-left text-2xl max-md:w-full max-md:text-left max-md:text-xl">
+          <div className="flex w-full max-md:w-full">
+            <p className="font-figtree text-filmo-soft-white text-left text-xl max-md:w-full max-md:text-lg">
               {prom.subText}
             </p>
           </div>
         </div>
 
-        <PromCollage params={{ schoolId, promId }} />
+        <PromCollage promPics={prom.promPics} />
 
         <div className="flex w-full flex-col items-center justify-between gap-8 max-md:gap-4">
           <div className="flex w-full flex-col items-center">

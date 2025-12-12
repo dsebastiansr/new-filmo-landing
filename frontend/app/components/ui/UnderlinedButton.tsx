@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function UnderlinedButton({text, linkTo, styles }: {text: string; linkTo: string; styles: string}) {
   return (

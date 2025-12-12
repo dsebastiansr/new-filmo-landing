@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect } from 'react';
+
 import ContactUsButton from '../ui/ContactUsButton';
 
 export default function Navbar() {
