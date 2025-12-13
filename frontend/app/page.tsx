@@ -36,7 +36,7 @@ export default async function Home() {
             <h1 className="flex items-center justify-end gap-4 max-md:flex-col max-md:gap-0">
               capturar historias
               <UnderlinedText
-                text="unicas"
+                text="únicas"
                 full={true}
                 textSize="5xl"
                 styles="after:-bottom-1"
@@ -50,7 +50,7 @@ export default async function Home() {
           </div>
 
           <Link
-            className="bg-filmo-yellow-100 mt-8 rounded-full px-7 py-4 max-md:px-6 max-md:py-3"
+            className="duration-300 hover:scale-105 bg-filmo-yellow-100 mt-8 rounded-full px-7 py-4 max-md:px-6 max-md:py-3"
             href="/portafolio"
           >
             <p className="font-figtree text-filmo-black-100 text-lg font-bold uppercase select-none">
@@ -130,16 +130,13 @@ export default async function Home() {
                 Vives y disfrutas al máximo, se nota en cada momento.
               </h1>
               <p className="text-filmo-soft-white font-figtree w-4/5 self-end text-right text-xl leading-8 font-medium max-md:w-full max-md:text-lg">
-                Cuando celebras tu graduación, compartes risas en una fiesta
-                universitaria o vibras en un evento cultural, lo que importa son
-                las experiencias que creas con las personas que hacen tu
-                historia especial.
+                Cuando celebras tu graduación, compartes risas y buenas vibras en tu fiesta, lo que importa son las experiencias que creas con las personas que hacen tu historia sea especial.
               </p>
 
               <div className="self-end">
                 <UnderlinedButton
                   linkTo="portafolio"
-                  text="Nuestro ultimo trabajo"
+                  text="Nuestro último trabajo"
                   styles=""
                 />
               </div>
@@ -228,10 +225,7 @@ export default async function Home() {
                 Vives y disfrutas al máximo, se nota en cada momento.
               </h1>
               <p className="text-filmo-soft-white font-figtree w-4/5 self-end text-right text-xl leading-8 font-medium">
-                Cuando celebras tu graduación, compartes risas en una fiesta
-                universitaria o vibras en un evento cultural, lo que importa son
-                las experiencias que creas con las personas que hacen tu
-                historia especial.
+                Cuando celebras tu graduación, compartes risas y buenas vibras en tu fiesta, lo que importa son las experiencias que creas con las personas que hacen tu historia sea especial.
               </p>
 
               <div className="self-end">
@@ -255,7 +249,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="z-40 flex flex-col items-center justify-center px-42 max-md:mt-16 max-md:px-6">
+        <div id="lastWorks" className="z-40 flex flex-col items-center justify-center px-42 max-md:mt-16 max-md:px-6">
           <div className="text-filmo-white font-garamond flex flex-col gap-2 text-8xl leading-[70px] font-extrabold max-md:relative max-md:gap-0 max-md:text-5xl max-md:leading-none">
             <h1 className="self-start">Nuestro</h1>
             <div className="ml-16 self-end max-md:ml-10">
@@ -269,12 +263,20 @@ export default async function Home() {
           </div>
           <div
             className="mt-24 flex w-full gap-8 max-md:mt-12 max-md:flex-col max-md:gap-14"
-            id="lastWorks"
           >
             {
               (() => {
                 const schools = [...data];
                 const selectedSchools: any[] = [];
+
+                // Asegurar que el Americano esté incluido
+                const americano = schools.find((school) => school.id === "americano");
+
+                if (americano) {
+                  selectedSchools.push(americano);
+                  schools.splice(schools.indexOf(americano), 1);
+                }
+
                 while (selectedSchools.length < 3 && schools.length) {
                   const idx = Math.floor(Math.random() * schools.length);
                   selectedSchools.push(schools[idx]);
@@ -282,21 +284,20 @@ export default async function Home() {
                 }
 
                 return selectedSchools.map((school: any) => (
-                   
                   <LastWork
                     key={school.id}
                     image={`${school.proms[0].promCover}`}
                     prom={school.proms[0].id}
                     school={school.name}
                     link={`/portafolio/${school.id}/${school.proms[0].id}`}
-                    styles=''
+                    styles=""
                   />
-                )); 
+                ));
               })()
             }
           </div>
           <Link
-            className="bg-filmo-yellow-100 mt-16 max-md:mt-24 rounded-full px-7 py-4 max-md:px-6 max-md:py-3"
+            className="duration-300 hover:scale-105 bg-filmo-yellow-100 mt-16 max-md:mt-24 rounded-full px-7 py-4 max-md:px-6 max-md:py-3"
             href="/portafolio"
           >
             <p className="font-figtree text-filmo-black-100 text-lg font-bold uppercase select-none">

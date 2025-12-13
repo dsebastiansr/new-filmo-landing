@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
         pathname: "/uploads/**",
       },
     ],
-    unoptimized: true, // 👈 FIX PARA NEXT 14+
+    unoptimized: true
   },
   productionBrowserSourceMaps: false,
 };

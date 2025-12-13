@@ -76,11 +76,10 @@ export default async function Portafolio() {
                   somos filmo
                 </p>
                 <h1 className="font-garamond text-filmo-white w-[18ch] text-center text-6xl font-extrabold max-md:w-auto max-md:text-4xl">
-                  Estamos donde las historias se viven fuerte: en la cancha, en
-                  el aula, en los abrazos de despedida.
+                  Capturamos las historias que se viven con fuerza: en la cancha, en el aula y en esos abrazos de despedida.
                 </h1>
               </div>
-              <UnderlinedButton linkTo="#cta" text="Contactanos" styles="" />
+              <UnderlinedButton linkTo="#cta" text="Contáctanos" styles="" />
             </div>
           </div>
         </div>

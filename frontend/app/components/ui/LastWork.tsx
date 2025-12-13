@@ -33,8 +33,10 @@ export default function LastWork({
       <h1 className="text-filmo-white font-garamond text-4xl font-extrabold max-md:text-4xl max-md:text-center">
         {school}
       </h1>
-            <h1 className="text-filmo-white font-garamond text-4xl font-extrabold max-md:text-4xl max-md:text-center">
-        Prom {prom}
+      <h1 className="text-filmo-white font-garamond text-4xl font-extrabold max-md:text-4xl max-md:text-center">
+        {school == 'Interamerican Academy'
+          ? `Class of ${prom}` 
+          : `Prom ${prom}`}
       </h1>
       <UnderlinedButton text="ver más" linkTo={link} styles="" />
     </div>

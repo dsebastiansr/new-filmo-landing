@@ -13,7 +13,7 @@ export default function CTA() {
           colegios
         </p>
         <h1 className="font-garamond text-filmo-white w-[20ch] text-center max-md:text-4xl max-md:w-auto text-7xl font-extrabold">
-          ¿Tu colegio es el próximo en nuestra historia?
+          ¿Será tu colegio el próximo en nuestra historia?
         </h1>
       </div>
 

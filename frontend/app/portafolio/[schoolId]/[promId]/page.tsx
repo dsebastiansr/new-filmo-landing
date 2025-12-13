@@ -5,7 +5,7 @@ import CTA from '@/app/components/sections/CTA';
 import Instagram from '@/app/components/sections/Instagram';
 
 import Navbar from '../../../components/layouts/Navbar';
-import { PromCollage } from '../../../components/sections/PromCollage';
+import PromCollage from '../../../components/sections/PromCollage';
 import CoverCollage from '../../../components/ui/CoverCollage';
 import { getStrapiData, toRoman } from '../../../lib/strapi';
 
@@ -57,13 +57,17 @@ export default async function promPage({
               </Link>
               <span>|</span>
               <p className="text-filmo-yellow-100 font-bold max-md:text-sm">
-                Promocion {toRoman(Number(promId), schoolId)}
+                {schoolId === 'interamerican' 
+                  ? `Class of ${toRoman(Number(promId), schoolId)}` 
+                  : `Promoción ${toRoman(Number(promId), schoolId)}`}
               </p>
             </div>
 
             <div className="flex flex-col items-center gap-5">
               <h1 className="font-garamond text-8xl font-extrabold text-white max-md:text-6xl">
-                Promoción {toRoman(Number(promId), schoolId)}
+                {schoolId === 'interamerican' 
+                  ? `Class of ${toRoman(Number(promId), schoolId)}` 
+                  : `Promoción ${toRoman(Number(promId), schoolId)}`}
               </h1>
 
               <div className="font-figtree text-filmo-soft-white w-[26ch] text-2xl max-md:w-auto max-md:text-xl">
@@ -82,7 +86,11 @@ export default async function promPage({
         <div className="flex w-full justify-between flex-col gap-3 max-md:gap-4">
           <div className="w-10/12 max-md:w-full">
             <h1 className="font-garamond text-filmo-white text-4xl font-medium leading-11 max-md:text-2xl max-md:leading-7 ">
-              &quot; {prom.text} &quot;
+              {
+                prom.text
+                ? `"${prom.text}"`
+                : ''
+              }
             </h1>
           </div>
 
@@ -117,7 +125,7 @@ export default async function promPage({
                   width: '100%',
                   height: '100%',
                 }}
-                title="Montessori 16"
+                title=""
               />
             </div>
           </div>

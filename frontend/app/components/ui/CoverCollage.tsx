@@ -45,12 +45,12 @@ export default async function CoverCollage(promPics: any) {
         >
           {row.map((pic: any) => (
             <Image
-              key={pic.id + rIndex}
-              src={pic.url}
-              alt={pic.url}
-              width={500}
-              height={300}
-              className="rounded-lg h-80 w-auto object-cover"
+            key={pic.id}
+            src={pic.url}
+            alt={pic.url}
+            width={500}
+            height={300}
+            className="rounded-lg h-80 w-auto object-cover"
             />
           ))}
         </div>

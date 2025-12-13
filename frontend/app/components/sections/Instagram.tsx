@@ -24,26 +24,27 @@ export default function Instagram() {
           <Link
             href="https://www.instagram.com/filmo.inc/"
             target="_blank"
-            className="relative w-full rounded-xl object-cover max-xl:w-1/2 max-md:w-64 max-md:shrink-0"
+            className="relative w-1/3 rounded-xl object-cover max-xl:w-1/2 max-md:w-64 max-md:shrink-0"
           >
-            <Image className="object-contain" src="/img/ff1.png" alt="" fill />
+            <Image className="transition duration-300 hover:-translate-y-1 hover:translate-x-1 object-contain" src="/img/ff1.png" alt="" fill />
           </Link>
 
           <Link
             href="https://www.instagram.com/filmo.inc/"
             target="_blank"
-            className="relative w-full rounded-xl object-cover max-xl:w-1/2 max-md:w-64 max-md:shrink-0"
+            className="relative w-1/3 rounded-xl object-cover max-xl:w-1/2 max-md:w-64 max-md:shrink-0"
           >
-            <Image className="object-contain" src="/img/ff2.png" alt="" fill />
+            <Image className="transition duration-300 hover:-translate-y-1 hover:translate-x-1 object-contain" src="/img/ff2.png" alt="" fill />
           </Link>
 
           <Link
             href="https://www.instagram.com/filmo.inc/"
             target="_blank"
-            className="relative w-full rounded-xl object-cover max-xl:w-1/2 max-md:w-64 max-md:shrink-0"
+            className="relative w-1/3 rounded-xl object-cover max-xl:w-1/2 max-md:w-64 max-md:shrink-0"
           >
-            <Image className="object-contain" src="/img/ff3.png" alt="" fill />
+            <Image className="transition duration-300 hover:-translate-y-1 hover:translate-x-1 object-contain" src="/img/ff3.png" alt="" fill />
           </Link>
+
         </div>
       </div>
     </div>

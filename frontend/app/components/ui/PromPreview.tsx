@@ -26,12 +26,14 @@ export default function SchoolPreview({
         height={500}
       />
       <h1 className="font-garamond text-filmo-white text-4xl font-extrabold">
-        Promoción {toRoman(Number(promId), schoolId)}
+        {schoolId === 'interamerican'
+          ? `Class of ${toRoman(Number(promId), schoolId)}`
+          : `Promoción ${toRoman(Number(promId), schoolId)}`}
       </h1>
       <UnderlinedButton
         linkTo={`/portafolio/${schoolId}/${promId}`}
         text="ver más"
-        styles=''
+        styles=""
       />
     </div>
   );
